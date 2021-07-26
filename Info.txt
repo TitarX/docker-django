@@ -6,6 +6,7 @@
 --------
 
 FOR FILE APP/APP/SETTINGS.PY:
+import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
