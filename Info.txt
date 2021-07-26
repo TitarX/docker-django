@@ -1,12 +1,22 @@
+> mkdir app
+> cp .flake8 app/.flake8
+
+--------
+
 > sudo docker build .
 > sudo docker-compose build
 > sudo docker-compose run app sh -c "django-admin.py startproject app ."
+> nano app/app/settings.py
 > sudo docker-compose up
 
 --------
 
 FOR FILE APP/APP/SETTINGS.PY:
+
 import os
+
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.20.20']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -16,3 +26,5 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASS'),
     }
 }
+
+--------
